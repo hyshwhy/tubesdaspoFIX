@@ -26,7 +26,6 @@ def Tulis_file(nama_file, arr, alamat):
                     temp += str(arr[i][j]) + ';'
                 
                 temp += str(arr[i][kolom-1]) + '\n'
-                # print(kolom, temp)
                 f.write(temp)
             
             
@@ -52,7 +51,6 @@ def buat_dir(dir_atas, dir_saat_ini, dir_bawah):
             dir_saat_ini += dir_bawah[i]
             if dir_bawah[i] == '/':
                 break
-        # print(current_dir)
         buat_dir(dir_atas, dir_saat_ini, dir_bawah)
         
 
