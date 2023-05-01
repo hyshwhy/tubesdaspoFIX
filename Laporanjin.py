@@ -25,8 +25,8 @@ def laporanjin():
     if Database.access != "bandung_bondowoso":
         print("Laporan jin hanya dapat diakses oleh akun Bandung Bondowoso.")
     else:
-        jumlah_jin_pengumpul = Misc.HitungJin("pengumpul")
-        jumlah_jin_pembangun = Misc.HitungJin("pembangun")
+        jumlah_jin_pengumpul = Misc.HitungJin("jin_pengumpul")
+        jumlah_jin_pembangun = Misc.HitungJin("jin_pembangun")
         jumlah_jin = jumlah_jin_pembangun + jumlah_jin_pengumpul
         print("Total Jin:", jumlah_jin)
         print("Total Jin Pengumpul:", jumlah_jin_pengumpul)
@@ -48,9 +48,9 @@ def laporanjin():
 
 
         # mengurut semua jin pembangun
-        daftar_pembangun = ['' for i in range(Misc.HitungJin("pembangun"))]
+        daftar_pembangun = ['' for i in range(Misc.HitungJin("jin_pembangun"))]
         for i in range(Misc.lengthList(Database.daftar_akun)):
-            if Database.daftar_akun[i][2] == "pembangun":
+            if Database.daftar_akun[i][2] == "jin_pembangun":
                 Misc.appendGlobal1D(Database.daftar_akun[i][0], daftar_pembangun)
 
         for i in range(Misc.lengthList(daftar_pembangun)):
