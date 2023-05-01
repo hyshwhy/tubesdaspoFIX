@@ -30,5 +30,5 @@ def bangun():
             
             print(f"Sisa candi yang perlu dibangun: {Misc.HitungSisaCandi()}.")
         else:
-            "Bahan bangunan tidak cukup"
+            print("Bahan bangunan tidak cukup")
 
