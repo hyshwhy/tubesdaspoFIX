@@ -1,5 +1,6 @@
 import argparse, os
 import Database
+import Misc
 
 def CSV_Parser():
     Database.init()
@@ -12,7 +13,7 @@ def CSV_Parser():
         lineU = fu.readline()
         kolomU = 0
         temp = ''
-        for i in range (len(lineU)):
+        for i in range (Misc.lengthString(lineU)):
             if lineU[i]==";" or lineU[i]=="\n":
                 Database.daftar_akun[baris][kolomU] = temp
                 temp = ''
@@ -34,7 +35,7 @@ def CSV_Parser():
         lineC = fc.readline()
         kolomC = 0
         temp = ''
-        for i in range (len(lineC)):
+        for i in range (Misc.lengthString(lineC)):
             if lineC[i]==";" or lineC[i]=="\n":
                 Database.daftar_candi[baris][kolomC] = temp
                 temp = ''
@@ -56,7 +57,7 @@ def CSV_Parser():
         lineB = fb.readline()
         kolomB = 0
         temp = ''
-        for i in range (len(lineB)):
+        for i in range (Misc.lengthString(lineB)):
             if lineB[i]==";" or lineB[i]=="\n":
                 Database.bahan_bangunan[baris][kolomB] = temp
                 temp = ''
@@ -90,4 +91,3 @@ def load():
         CSV_Parser()
     else:
         print(f"Folder \"{args.nama_folder}\" tidak ditemukan")
-
