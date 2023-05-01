@@ -11,7 +11,13 @@ def kumpul():
         pasir=random.randint(1,5)
         batu=random.randint(1,5)
         air=random.randint(1,5)
-        Database.bahan_bangunan[0][2]+=pasir
-        Database.bahan_bangunan[1][2]+=batu
-        Database.bahan_bangunan[2][2]+=air
+
+        pasir_saat_ini = int(Database.bahan_bangunan[0][2])       
+        batu_saat_ini = int(Database.bahan_bangunan[1][2])
+        air_saat_ini = int(Database.bahan_bangunan[2][2])
+
+        Database.bahan_bangunan[0][2] = pasir_saat_ini + pasir
+        Database.bahan_bangunan[1][2] = batu_saat_ini + batu
+        Database.bahan_bangunan[2][2] = air_saat_ini + air
+
         print("Jin menemukan",pasir,"pasir,",batu,"batu,","dan",air,"air")
